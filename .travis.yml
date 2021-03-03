@@ -1,0 +1,10 @@
+sudo: false
+addons:
+  sonarcloud:
+    token: ${SONAR_TOKEN}
+jdk:
+  - openjdk11
+languaje: java
+script:
+  - mvn clean install
+  - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_TOKEN} -Dsonar.organization=alexvloure -Dsonar.projectKey=ejemplomavenIC
